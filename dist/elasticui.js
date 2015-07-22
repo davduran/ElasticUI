@@ -697,6 +697,10 @@ var elasticui;
                     this.refreshPromise.abort();
                     this.refreshPromise = null;
                 }
+                if (this.searchPromise != null) {
+                    this.searchPromise.abort();
+                    this.searchPromise = null;
+                }                
                 this.indexVM.loading = true;
                 this.searchPromise = this.getSearchPromise();
                 this.searchPromise.then(function (body) {
